@@ -107,14 +107,16 @@ public class CityAdapter extends BaseAdapter {
     }
 
     public int getPosition(String letter) {
-        int position = -1;
         Set<CountryBean> set = mLetterPos.keySet();
         Iterator<CountryBean> it = set.iterator();
         CountryBean countryBean = null;
         while (it.hasNext()) {
             countryBean = it.next();
             if (TextUtils.equals(countryBean.getFirstLetter(), letter.toUpperCase())) {
-                return mLetterPos.get(countryBean)-1;
+                if (countryBean.getFirstLetter().equals("A")){
+                    return mLetterPos.get(countryBean)-1;
+                }
+                return mLetterPos.get(countryBean);
             }
         }
         return -1;

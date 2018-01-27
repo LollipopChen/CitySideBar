@@ -63,9 +63,7 @@ public class CountryController implements LetterSideBar.OnTouchLetterListener {
 //            mCountryRecyclerView.scrollToPosition(position);
 //        }
         int position = mAdapter.getPosition(letter);
-        Log.e("position","position = " + position);
         if (position != -1){
-            Log.e("position","position = " + position);
             listView.setSelection(position);
         }
     }
